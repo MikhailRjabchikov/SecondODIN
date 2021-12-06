@@ -1,13 +1,12 @@
 package com.Mike.odin
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Parcel
 import android.os.Parcelable
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity() : AppCompatActivity(), Parcelable {
-    constructor(parcel: Parcel) : this() {
-    }
+    constructor(parcel: Parcel) : this()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
