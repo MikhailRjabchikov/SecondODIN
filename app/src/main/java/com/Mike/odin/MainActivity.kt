@@ -1,33 +1,61 @@
 package com.Mike.odin
 
 import android.os.Bundle
-import android.os.Parcel
-import android.os.Parcelable
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity() : AppCompatActivity(), Parcelable {
-    constructor(parcel: Parcel) : this()
+const val TAG = "MainActivity"
 
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        Log.d(
+            TAG, "onCreate"
+        )
     }
 
-    override fun writeToParcel(parcel: Parcel, flags: Int) {
+    override fun onStart() {
+        super.onStart()
 
+        Log.d(
+            TAG, "onStart"
+        )
     }
 
-    override fun describeContents(): Int {
-        return 0
+    override fun onResume() {
+        super.onResume()
+        Log.d(
+            TAG, "onResume"
+        )
     }
 
-    companion object CREATOR : Parcelable.Creator<MainActivity> {
-        override fun createFromParcel(parcel: Parcel): MainActivity {
-            return MainActivity(parcel)
-        }
+    override fun onPause() {
+        super.onPause()
+        Log.d(
+            TAG, "onPause"
+        )
+    }
 
-        override fun newArray(size: Int): Array<MainActivity?> {
-            return arrayOfNulls(size)
-        }
+    override fun onStop() {
+        super.onStop()
+        Log.d(
+            TAG, "onStop"
+        )
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+         Log.d(TAG, "onRestart")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(
+            TAG, "onDestroy"
+        )
     }
 }
+
+
